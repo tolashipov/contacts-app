@@ -1,0 +1,68 @@
+#root>.page{
+  margin-top: 2.1rem;
+}
+.highlight{
+  background-color:yellow;
+}
+#root>.page>.navBar{
+  position:fixed;
+  top:0;
+  width:100vw;
+  height:2rem;
+  background-color: white;
+}
+#root>.page>.MuiButtonBase-root-23{
+  width: 30vw;
+  margin-top: 1rem;
+  position: relative;
+  left: 35vw;
+}
+#root>.page>.navBar>input{
+  position: relative;
+  width: 50vw;
+  left: 25vw;
+  margin-top:0.4rem;
+}
+
+#root>.page>.contactsPage{
+  width:60rem;
+  margin: 0 auto;
+}
+
+img{
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid black;
+}
+#root>.page>.contactsPage>div>.contactDiv>.imgDiv{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding:1rem 0;
+}
+#root>.page>.contactsPage>div{
+  display:inline-block;
+}
+#root>.page>.contactsPage>div>.contactDiv{
+  display:inline-block;
+  width: 20rem;
+  border: 1px solid black;
+  box-sizing:border-box;
+}
+#root>.page>.contactsPage>div>.contactDiv>.detailDiv{
+  display: block;
+  width: 15rem;
+  margin: 0 auto;
+}
+#root>.page>.contactsPage>div>.contactDiv>.detailDiv>.nameP{
+    display: inline-block;
+    margin: 0px auto;
+    width: 10rem;
+}
+/* 
+#root>div>div>.contactDiv>.detailsDiv>.fa-mars,
+#root>div>div>.contactDiv>.detailsDiv>.fa-venus{
+
+  position:relative;
+  float:right;
+} */
