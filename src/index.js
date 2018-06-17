@@ -6,7 +6,7 @@ import './index.css';
 
 class ContactsApp extends React.Component {
     state= {
-        children: 9,
+        children: 1,
     }
 
     contactList =[]
@@ -14,6 +14,7 @@ class ContactsApp extends React.Component {
     // retreives relevent data from contact cards (f. name, l.name, id(cell))
     callBackData = (x) => {
         this.contactList.push(x);
+        console.log(this.contactList);
     }
 
     render() {
@@ -42,11 +43,16 @@ class ContactsApp extends React.Component {
 
     // search function highlighting contact cards
     searchName = (e) => {
-        for(let i=0;i<this.contactList.length;i++){
-            if(this.contactList[i].first.includes(e.target.value)||this.contactList[i].last.includes(e.target.value)){
-                document.getElementById(this.contactList[i].id).classList.add('highlight');
-            }else{
-                document.getElementById(this.contactList[i].id).classList.remove('highlight');  //disable highlight from previous searches
+        for(let j=0;j<this.contactList.length;j++){
+            for(let i=0;i<this.contactList[j].length;i++){
+                if(this.contactList[j][i].name.first.includes(e.target.value)||
+                this.contactList[j][i].name.last.includes(e.target.value)||
+                e.target.value.includes(this.contactList[j][i].name.last)||
+                e.target.value.includes(this.contactList[j][i].name.first)){
+                    document.getElementById(this.contactList[j][i].cell).classList.add('highlight');
+                }else{
+                    document.getElementById(this.contactList[j][i].cell).classList.remove('highlight');  //disable highlight from previous searches
+                }
             }
         }
         // removes the entered text after search is done.
@@ -57,7 +63,7 @@ class ContactsApp extends React.Component {
     //on button press, adds more contact card elements
     onAddBulk = () => {
         this.setState({
-          children: this.state.children + 9
+          children: this.state.children + 1
         });
     }
 }
